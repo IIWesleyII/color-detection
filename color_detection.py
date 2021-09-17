@@ -73,5 +73,5 @@ if __name__ == "__main__":
         
         # Exit program if exit button is pressed
         if cv2.getWindowProperty('image',cv2.WND_PROP_VISIBLE) < 1:        
-                break       
+            break       
     cv2.destroyAllWindows()
