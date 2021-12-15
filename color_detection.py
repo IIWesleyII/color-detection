@@ -1,17 +1,12 @@
 import cv2
 import pandas as pd
-import argparse
 
-"""Given an image, allow user to double click the image to
+"""
+Given an image, allow user to double click the image to
 show the rgb color of the location.
 """
-
-# Creating argument parser to take image path from command line
-ap = argparse.ArgumentParser()
-ap.add_argument('-i', '--image', required=True, help="Image Path")
-args = vars(ap.parse_args())
-img_path = args['image']
-img = cv2.imread(img_path)
+# pass in relative path of image 
+img = cv2.imread('img2.jpg')
 
 # Globals
 r = g = b = xpos = ypos = 0
@@ -45,7 +40,6 @@ def draw_function(event,x,y,flags,param):
        
 cv2.namedWindow('image')
 cv2.setMouseCallback('image',draw_function)
-
 
 if __name__ == "__main__":
     while True:
